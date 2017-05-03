@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别映射文件的名称 -->
+<mapper namespace="com.ldp.itcast.mapper.ChartMapper">
+	<!-- 找到所有与课程有联系的老师 -->
+	<select id="findAllTeacher" resultType="int">
+		select distinct t_id from Teacher_Course
+	</select>
+	
+	
+	<!-- 找到每一个老师的所有课程，并且开始分析总成绩 -->
+	<select id="findDealCourse" parameterType="int" resultType="Double">
+		select sum(result)/count(*) from Evaluate
+		where c_id in
+		<foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</select>
+	
+	<!-- 根据所含有老师的老师的ID查询出课程 -->
+	<select id="findCourseC_id" parameterType="int" resultType="int">
+		select c_id from Teacher_Course where t_id=#{t_id}
+	</select>
+	
+	<!-- 删除老师的记录 -->
+	<delete id="deleteOneTeacher" parameterType="int">
+		delete from Analyzes
+	</delete>
+<!-- 	<select id="findAnalyzesT_id" parameterType="int" resultMap="int">
+		select count(*) from Analyzes where a_id=#{t_id}
+	</select> -->
+	
+	<!-- 根据存在的教师ID得到院系名称 -->
+	<select id="findT_idToIname" parameterType="int" resultType="String">
+		select b.iname from 
+		(select * from Teacher where t_id=#{t_id})p 
+		left join 
+		(select * from Courtyard) b 
+		on p.i_id=b.i_id
+	</select>
+	<!-- 添加分析最后的成绩到Analyses -->
+	<insert id="saveAnalyzes" parameterType="com.ldp.itcast.domain.Analyzes">
+		insert into Analyzes(a_id,result,iname)
+		values(#{a_id},#{result},#{iname})
+	</insert>
+	<!-- 查询出所有的分析表中的成绩,DESC降序，ASC升序 -->
+	<select id="findAllAnalyzesCondition" parameterType="map" resultType="com.ldp.itcast.domain.Analyzes">
+		select * from Analyzes
+		where 1=1
+		<if test="a_id!=null">and a_id=#{a_id}</if>
+		<if test="iname!=null">and iname=#{iname}</if>
+		order by result DESC
+	</select>
+</mapper>

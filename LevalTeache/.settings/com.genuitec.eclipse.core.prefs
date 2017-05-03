@@ -1,0 +1,4 @@
+#Mon May 30 16:03:02 CST 2016
+eclipse.preferences.version=1
+validator.Checked=WebRoot/WEB-INF/pages/course/CourseRegister.jsp,WebRoot/sources/js/jquery-2.1.4.min.js
+validator.Unchecked=

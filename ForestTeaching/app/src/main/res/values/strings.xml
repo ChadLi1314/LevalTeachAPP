@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">评教网</string>
+    <string name="user_text">用户名</string>
+    <string name="user_password">密码</string>
+    <string name="student_page">学生主页</string>
+    <string name="title_null"></string>
+    <string name="fine">10分</string>
+    <string name="well">8分</string>
+    <string name="pass">6分</string>
+    <string name="un_pass">4分</string>
+    <string name="add_redion">---附加评语选项---</string>
+    <string name="evaluate_button">PULL ALL</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+
+</resources>

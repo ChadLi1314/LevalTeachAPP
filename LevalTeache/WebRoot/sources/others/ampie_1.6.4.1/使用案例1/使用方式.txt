@@ -1,0 +1,2 @@
+1. 将ampie文件夹拷贝过去
+2. 在ampie文件夹下的ampie_data.xml文件中修改数据即可

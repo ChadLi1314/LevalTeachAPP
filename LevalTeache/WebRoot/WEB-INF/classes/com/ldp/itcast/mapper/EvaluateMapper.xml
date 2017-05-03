@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别映射文件的名称 -->
+<mapper namespace="com.ldp.itcast.mapper.EvaluateMapper">
+	<resultMap type="com.ldp.itcast.domain.Evaluate" id="EvaluateMap">
+		<id property="e_id" column="e_id"/>
+		<result property="result" column="result"/>
+		<result property="s_id" column="s_id"/>
+		<result property="c_id" column="c_id"/>
+		<result property="content" column="content"/>
+		<result property="grade" column="grade"/>
+		<result property="cname" column="cname"/>
+	</resultMap>
+	<!-- 插入评价 -->
+	<insert id="saveEvaluate" parameterType="com.ldp.itcast.domain.Evaluate">
+		insert into Evaluate(result,s_id,c_id,content,grade,cname)
+		values(
+			#{result},
+			#{s_id},
+			#{c_id},
+			#{content},
+			#{grade},
+			#{cname}
+		)
+	</insert>
+	
+	<!-- 查询评价 -->
+	<select id="findEvaluateCondition" parameterType="map" resultType="com.ldp.itcast.domain.Evaluate">
+		select * from Evaluate
+		where 1=1
+		<if test="c_id!=null">and c_id=#{c_id}</if>
+	</select>
+</mapper>
