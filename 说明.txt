@@ -1,7 +1,0 @@
-APP效果图：APP的功能界面
-ForestTeaching：android源代码(androidStudio工具开发)
-LevalTeache：android和web的后台服务器代码(MyEclipse开发)
-BackPicture：android开发中用到的图片集
-stt_database：数据库文件(MySql开发)
-评教网.apk：app安装文件
-评价网相关图例：论文中用到的相关图例(E-R图等)

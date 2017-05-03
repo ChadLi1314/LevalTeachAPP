@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_student__evaluate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    tools:context="com.example.ldp.com.activity.Student_EvaluateActivity">
+
+    <TextView
+        android:id="@+id/question_id"
+        android:textSize="18sp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:textColor="@color/selectColor"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/check_redio_button"
+        android:layout_below="@+id/question_id"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/button_1"
+            android:text="@string/fine"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/button_2"
+            android:text="@string/well"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/button_3"
+            android:text="@string/pass"
+            android:checked="true"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/button_4"
+            android:text="@string/un_pass"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+</RelativeLayout>

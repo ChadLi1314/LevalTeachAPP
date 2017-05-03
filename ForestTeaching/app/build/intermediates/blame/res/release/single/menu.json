@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\build\\intermediates\\res\\merged\\release\\menu\\evaluate_manager.xml",
+        "source": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\src\\main\\res\\menu\\evaluate_manager.xml"
+    },
+    {
+        "merged": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\build\\intermediates\\res\\merged\\release\\menu\\teacher.xml",
+        "source": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\src\\main\\res\\menu\\teacher.xml"
+    },
+    {
+        "merged": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\build\\intermediates\\res\\merged\\release\\menu\\student.xml",
+        "source": "F:\\AndroidAppProjectsFiles\\ForestTeaching\\app\\src\\main\\res\\menu\\student.xml"
+    }
+]
